@@ -82,12 +82,12 @@ namespace List
 
 		public int FindIndex(int startIndex, int count, Predicate<T> match)
 		{
-			if (startIndex > size)
-				throw new ArgumentOutOfRangeException();
+			if (startIndex > size)                          // startIndex가 size보다 클때 실행
+                throw new ArgumentOutOfRangeException();	// 허용범위를 벗어나면 예외처리함
 			if (count < 0 || startIndex > size - count)
-				throw new ArgumentOutOfRangeException();
-			if (match == null)
-				throw new ArgumentNullException();
+				throw new ArgumentOutOfRangeException();    // 허용범위를 벗어나면 예외처리함
+            if (match == null)
+				throw new ArgumentNullException();			// null이 될 경우 예외처리함
 
 			int endIndex = startIndex + count;
 			for (int i = startIndex; i < endIndex; i++)
